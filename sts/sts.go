@@ -115,7 +115,7 @@ func (c *Client) generateSignedURL(expiredTime uint) (string, error) {
 	queryStr += "&SignatureMethod=HMAC-SHA1"
 	queryStr += "&Version=" + StsAPIVersion
 	queryStr += "&Action=AssumeRole"
-	queryStr += "&SignatureNonce=" + uuid.NewV4().String()
+	queryStr += "&SignatureNonce=" + uuid.Must(uuid.NewV4()).String()
 	queryStr += "&DurationSeconds=" + strconv.FormatUint((uint64)(expiredTime), 10)
 
 	// Sort query string
