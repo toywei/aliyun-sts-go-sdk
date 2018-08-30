@@ -15,6 +15,7 @@
 src/
 pkg/
 
+.gitignore
 
 my*txt
 nls*
